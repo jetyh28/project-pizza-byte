@@ -1,0 +1,21 @@
+.top-images {
+    width: 250px;
+}
+
+h1 {
+    padding-top: 40px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#asterisk {
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+
+fieldset {
+ width: 100%;
+  border: 1px solid #333333;
+  box-sizing: border-box;
+}
