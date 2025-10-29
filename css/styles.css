@@ -8,9 +8,8 @@ h1 {
     font-weight: bold;
 }
 
-#asterisk {
-    font-size: 1rem;
-    padding-left: 20px;
+.custInfoLabel {
+    padding-left: 10px;
 }
 
 

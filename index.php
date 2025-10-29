@@ -45,34 +45,34 @@
 
     <!-- Containet holding form -->
 <div class="row" > 
-    <div class="col text-center">
+    <div class="col ">
 <form action=receipt.php method="post">
   <p id="asterisk"> Required values are marked by an asterisk  (*)</p><br>
   
-  <fieldset style = "border: 1px solid black; width: 450px; margin: auto;">
+  <fieldset style = "border: 1px solid black; width: 550px; margin: auto;">
   
-   <legend>Customer Information *</legend>
+   <legend style="font-size: medium; padding-left: 10px;">Customer Information *</legend>
     
    <!-- First Name -->
     <div class="form-group row">
-        <div class="col-sm-4">
-        <label for="firstName">First Name: *</label>
+        <div class="col-sm-3">
+        <label for="firstName" class="custInfoLabel">First Name: *</label>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-7">
         <input type="text" required name="name" id="firstName" class="form-control"/><br>
         </div>
     </div>
 
     <!-- Last Name -->
     
-    <div class="form-group">
-        <div class="col-sm-4">
-        <label for="lastName">Last Name: *</label>
+    <div class="form-group row">
+        <div class="col-sm-3">
+        <label for="lastName" class="custInfoLabel">Last Name: *</label>
         </div>
 
-        <div class="col-sm-6">
-        <input type="text" required lname="lName" id="lastName" /><br>
+        <div class="col-sm-7">
+        <input type="text" required lname="lName" id="lastName" class="form-control"/><br>
         </div>
     </div>
 
