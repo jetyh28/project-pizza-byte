@@ -13,11 +13,12 @@ h1 {
 }
 
 
-fieldset {
+ fieldset {
  width: 100%;
   border: 1px solid #333333;
   box-sizing: border-box;
-}
+  border-top: 0;
+} 
 
 .pizza1 {
     width: 30px;
@@ -55,4 +56,9 @@ fieldset {
 legend {
     
     background-color: white;
+}
+
+.form-check-reverse {
+/* text-align: left !important ; */
+
 }
