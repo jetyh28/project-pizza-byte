@@ -66,7 +66,7 @@
         </div>
 
         <div class="col-sm-7">
-        <input type="text" required name="name" id="firstName" class="form-control"/><br>
+        <input type="text" required name="firstName" id="fName" class="form-control"/><br>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
         </div>
 
         <div class="col-sm-7">
-        <input type="text" required name="lName" id="lastName" class="form-control"/><br>
+        <input type="text" required name="lastName" id="lName" class="form-control"/><br>
         </div>
     </div>
 
@@ -89,7 +89,7 @@
         </div>
 
         <div class="col-sm-7">
-        <textarea required name="delivery" id="deliveryLocation" rows="4" col="40" class="form-control"></textarea>
+        <textarea required name="deliveryLocation" id="delivery" rows="4" col="40" class="form-control"></textarea>
         </div>
     </div>
 
@@ -226,8 +226,8 @@
       </div>
 
       <div class="col-sm-7">
-        <select class="form-select" aria-label="crust selection">
-            <option selected>Thick</option>
+        <select class="form-select" aria-label="crust selection" name="crust">
+            <option selected >Thick</option>
             <option value="1">Thin</option>
             <option value="2">Hand-tossed</option>
         </select>
@@ -249,7 +249,7 @@
         </div>
 
         <div class="col-sm-7">
-            <select class="form-select" aria-label="quantity selection">
+            <select class="form-select" aria-label="quantity selection" name="quantity">
             <option selected>1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -280,7 +280,7 @@
         </div>
 
         <div class="col-sm-7">
-            <textarea name="instructions" id="specialInstructions" rows="4" col="40" class="form-control" >  </textarea>
+            <textarea name="specialInstructions" id="instructions" rows="4" col="40" class="form-control" >  </textarea>
         </div>
 
     </div>
@@ -296,7 +296,7 @@
             
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                          <input class="form-check-input" type="checkbox" value="pepperoni" id="pepperoni" >
+                          <input class="form-check-input" name="toppings" type="checkbox" value="pepperoni" id="pepperoni"  >
                         </div>
                         <div class="col-2">
                           <label class="form-check-label" for="pepperoni">Pepperoni</label>
@@ -305,7 +305,7 @@
 
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="ham" id="ham">
+                        <input class="form-check-input" name="toppings"  type="checkbox" value="ham" id="ham">
                         </div>
                         
                         <div class="col-2">
@@ -320,7 +320,7 @@
                     <div class="form-check form-check-reverse">
                       <div class="col-8">
 
-                      <input class="form-check-input" type="checkbox" value="pork" id="pork">
+                      <input class="form-check-input" name="toppings" type="checkbox" value="pork" id="pork">
                       </div>
 
                       <div class="col-2">
@@ -336,7 +336,7 @@
                       <div class="col-8">
 
 
-                      <input class="form-check-input" type="checkbox" value="sausage" id="sausage">
+                      <input class="form-check-input" name="toppings" type="checkbox" value="sausage" id="sausage">
                       </div>
 
                       <div class="col-2">
@@ -353,7 +353,7 @@
                       <div class="col-8">
 
 
-                      <input class="form-check-input" type="checkbox" value="chicken" id="chicken">
+                      <input class="form-check-input" name="toppings" type="checkbox" value="chicken" id="chicken">
 
                       </div>
 
@@ -389,7 +389,7 @@
 
                     <div class="form-check form-check-reverse">
                       <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="mushrooms" id="mushrooms" >
+                        <input class="form-check-input" name="toppings" type="checkbox" value="mushrooms" id="mushrooms" >
                       </div>
                         <div class="col-5">
                           <label class="form-check-label" for="mushrooms">Mushrooms</label>
@@ -400,7 +400,7 @@
                     <!-- Green Peppers -->
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                          <input class="form-check-input" type="checkbox" value="greenpeppers" id="gp" >
+                          <input class="form-check-input" name="toppings" type="checkbox" value="greenpeppers" id="gp" >
                         </div>
                         <div class="col-5">
                           <label class="form-check-label" for="gp">Green Peppers</label>
@@ -412,7 +412,7 @@
 
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                          <input class="form-check-input" type="checkbox" value="onions" id="onions" >
+                          <input class="form-check-input" name="toppings"  type="checkbox" value="onions" id="onions" >
                         </div>
                         <div class="col-3">
                           <label class="form-check-label" for="onions">Onions</label>
@@ -426,7 +426,7 @@
 
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                          <input class="form-check-input" type="checkbox" value="tomatoes" id="tomatoes" >
+                          <input class="form-check-input" name="toppings" type="checkbox" value="tomatoes" id="tomatoes" >
                         </div>
                         <div class="col-2">
                           <label class="form-check-label" for="tomatoes">Tomatoes</label>
@@ -444,7 +444,7 @@
                       <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos" >
                     </div>
                     <div class="col-5">
-                      <label class="form-check-label" for="jalapenos">Jalapenos</label>
+                      <label class="form-check-label" name="toppings" for="jalapenos">Jalapenos</label>
                     </div>
                   </div>
 

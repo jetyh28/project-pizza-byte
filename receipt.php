@@ -9,6 +9,11 @@
     $error_message = "";
     $firstName = "";
     $lastName = "";
+	$deliveryLocation = "";
+	$phoneNumber = "";
+	$deliveryTime = "";
+	$pizzaSize = "";
+	$crust = "";
     $display_form = false;
     $errors = false;
 
@@ -41,13 +46,13 @@
 		$display_form = true;
 	}
     } else {
-	$display_form = true;
+	$display_form = false;
     }
 
     if($display_form == true) {
 
 ?>
-    <form action="form.php" method="post">
+    <form action="receipt.php" method="post">
 <?php
 
     if ($errors == true ) {
@@ -65,7 +70,6 @@
 	</form>
 <?php
     } else{
-       $display_form = false;
 		// Process Form Data
 		echo("<H2>Hi $firstName $lastName!!</H2>");
     }
