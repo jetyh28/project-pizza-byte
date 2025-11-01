@@ -43,21 +43,26 @@
 
     </div>
 
-    <!-- Containet holding form -->
+<div class="container-fluid">
+<form action=receipt.php method="post">
+
+   
 <div class="row" > 
-    <div class="col-5">
-    <p id="asterisk"> Required values are marked by an asterisk  (*)</p><br>
-    <form action=receipt.php method="post">
- 
+    <div class="col-5 w-40 ps-4">
+      <div class="container ">
+    <p id="asterisk"> Required values are marked by an asterisk  (*)</p>
+    </div>
+   
+  <!-- Fieldset holding client form -->
   
-  <fieldset style = "border: 1px solid black; border-top: none; width: 550px; margin: auto;">
+  <fieldset style = "border: 1px solid black; border-top: none;  margin: auto;">
   
    <legend class="legend-text" style=" padding-left: 10px;">Customer Information *</legend>
     
    <!-- First Name -->
     <div class="form-group row">
-        <div class="col-sm-3">
-        <label for="firstName" class="custInfoLabel">First Name: *</label>
+        <div class="col-sm-4">
+        <label for="firstName" class="custInfoLabel">First Name *</label>
         </div>
 
         <div class="col-sm-7">
@@ -69,18 +74,18 @@
     
     <div class="form-group row">
         <div class="col-sm-4">
-        <label for="lastName" class="custInfoLabel">Last Name: *</label>
+        <label for="lastName" class="custInfoLabel">Last Name *</label>
         </div>
 
         <div class="col-sm-7">
-        <input type="text" required lname="lName" id="lastName" class="form-control"/><br>
+        <input type="text" required name="lName" id="lastName" class="form-control"/><br>
         </div>
     </div>
 
     <!-- Delivery Location  -->
     <div class="form-group row">
         <div class="col-sm-4">
-        <label for="deliveryLocation" class="custInfoLabel">Delivery Location: *</label>
+        <label for="deliveryLocation" class="custInfoLabel">Delivery Location *</label>
         </div>
 
         <div class="col-sm-7">
@@ -90,12 +95,12 @@
 
     <!-- Phone -->
     <div class="form-group row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 pt-2">
         <label for="phone" class="custInfoLabel">Phone *</label>
         </div>
 
-        <div class="col-sm-7">
-        <input type="tel" required name="phoneNumber" id="phone" /><br>
+        <div class="col-sm-6 pt-2">
+        <input type="tel" required name="phoneNumber" id="phone" class="form-control" /><br>
         </div>
     </div>
 
@@ -126,8 +131,9 @@
 
 <!--  Bigger div right side -->
 
-<div class="col-7" style = "padding-top:60px";>
-    <fieldset style = "border: 1px solid black; width: 65%; border-top: none;">
+<div class="col-7 w-70" style = "padding-top:60px";>
+    <fieldset style = "border: 1px solid black;  border-top: none; " class="ps-3">
+ 
   
    <legend class="legend-text" style=" padding-left: 10px;">Customize Your Pizza</legend>
     
@@ -139,6 +145,8 @@
 
         <div class="col-sm-7 form-check">
           <div class="row"> 
+
+          <!-- Pizza 10" container -->
             <div class="col-2 text-center" >
 
         <!-- Pizza size selection -->
@@ -146,18 +154,49 @@
                 <p style="padding-left: 5px;">10</p>
               </div>
 
+              <!-- Radio button pizza 10 -->
+
+            <div class="container ms-4 mt-3">
+              <input class="form-check-input" type="radio" name="pizzaSize" id="pizza10">
             </div>
 
-            <div class="col-3 text-center" >
+            </div>
+
+            <!-- Pizza 12" container -->
+
+            <div class="col-2 text-center" >
+                  <!-- Red pizza circle -->
               <div class="pizza2" style="background-color: red;">
               </div>
 
+
+               <!-- Radio button pizza 12" -->
+
+              <div class="container ms-4 mt-1">
+                <input class="form-check-input" type="radio" name="pizzaSize" id="pizza12">
+              </div>
+
+
             </div>
 
 
+            <!-- Pizza 14" container -->
+
+
             <div class="col-2 text-center" >
+
+              <!-- Red pizza circle -->
               <div class="pizza3" style="background-color: red;">
               </div>
+
+              <!-- Radio button pizza 14" -->
+
+              <div class="container ms-4">
+                <input class="form-check-input" type="radio" name="pizzaSize" id="pizza14">
+              </div>
+
+
+
 
             </div>
             
@@ -165,24 +204,15 @@
     </div>
 
         <!-- Radio buttons pizza -->
-        <div class="row sizesSelect">
-        <div class="col-3 text-center">
-            <input class="form-check-input" type="radio"  name="pizzaSize" id="pizza10"/> 
-        </div>
+        
+        
 
-        <div class="col-3 text-center">
-            <input class="form-check-input" type="radio"  name="pizzaSize" id="pizza12"/> 
-
-        </div> 
-
-        <div class="col-3 text-center"> 
-            <input class="form-check-input" type="radio"  name="pizzaSize" id="pizza14"/>  
-        </div>
+    
 
     </div>  
     
 </div>
-</div>
+
 
 
     <!-- Pizza Crust -->
@@ -257,15 +287,15 @@
 
 
     <!-- Row for both meat toppings and vegetable toppings -->
-    <div class="row">
+    <div class="row ms-3">
 
     <!-- Meat toppings -->
-        <div class="col-5">
-            <fieldset style = "border: 1px solid black; width: 90%; border-top: none;">
-            <legend>Meat Toppings</legend>
+        <div class="col-6 mt-3">
+            <fieldset style = "border: 1px solid black; border-top: none;" class="ps-2 pb-1">
+            <legend class="legend-text ps-2">Meat Toppings</legend>
             
                     <div class="form-check form-check-reverse">
-                        <div class="col-10">
+                        <div class="col-8">
                           <input class="form-check-input" type="checkbox" value="pepperoni" id="pepperoni" >
                         </div>
                         <div class="col-2">
@@ -274,7 +304,7 @@
                     </div>
 
                     <div class="form-check form-check-reverse">
-                        <div class="col-10">
+                        <div class="col-8">
                         <input class="form-check-input" type="checkbox" value="ham" id="ham">
                         </div>
                         
@@ -288,7 +318,7 @@
 
 
                     <div class="form-check form-check-reverse">
-                      <div class="col-10">
+                      <div class="col-8">
 
                       <input class="form-check-input" type="checkbox" value="pork" id="pork">
                       </div>
@@ -303,7 +333,7 @@
 
 
                     <div class="form-check form-check-reverse">
-                      <div class="col-10">
+                      <div class="col-8">
 
 
                       <input class="form-check-input" type="checkbox" value="sausage" id="sausage">
@@ -320,7 +350,7 @@
 
 
                     <div class="form-check form-check-reverse">
-                      <div class="col-10">
+                      <div class="col-8">
 
 
                       <input class="form-check-input" type="checkbox" value="chicken" id="chicken">
@@ -350,67 +380,75 @@
 
 
         <!-- Vegetables toppings -->
-        <div class="col-7">
-            <fieldset style = "border: 1px solid black; width: 100%; border-top: none;">
-            <legend class="legend-text">Vegetable Toppings</legend>
+        <div class="col-6">
+          <fieldset style = "border: 1px solid black;  border-top: none;" class="ps-2 pb-1">
+            <legend class="legend-text ps-2 mt-3">Vegetable Toppings</legend>
 
-              <div class="form-check form-check-reverse">
-                        <div class="col-10">
-                          <input class="form-check-input" type="checkbox" value="mushrooms" id="mushroom" >
-                        </div>
-                        <div class="col-2">
+                    <!-- Mushrooms -->
+
+
+                    <div class="form-check form-check-reverse">
+                      <div class="col-8">
+                        <input class="form-check-input" type="checkbox" value="mushrooms" id="mushrooms" >
+                      </div>
+                        <div class="col-5">
                           <label class="form-check-label" for="mushrooms">Mushrooms</label>
                         </div>
                     </div>
 
+
+                    <!-- Green Peppers -->
                     <div class="form-check form-check-reverse">
-                        <div class="col-9">
-                        <input class="form-check-input" type="checkbox" value="greenpepper" id="gp">
+                        <div class="col-8">
+                          <input class="form-check-input" type="checkbox" value="greenpeppers" id="gp" >
                         </div>
-                        
-                        <div class="col-3">
-
-                        <label class="form-check-label" for="ham">Green Peppers</label>
+                        <div class="col-5">
+                          <label class="form-check-label" for="gp">Green Peppers</label>
                         </div>
-
                     </div>
 
+                    <!-- Onions -->
 
 
-                      <div class="col-10">
+                    <div class="form-check form-check-reverse">
+                        <div class="col-8">
                           <input class="form-check-input" type="checkbox" value="onions" id="onions" >
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                           <label class="form-check-label" for="onions">Onions</label>
                         </div>
                     </div>
 
+                   
+
+
+                    <!-- Tomatoes -->
+
                     <div class="form-check form-check-reverse">
-                        <div class="col-10">
-                        <input class="form-check-input" type="checkbox" value="tomatoes" id="tomatoes">
+                        <div class="col-8">
+                          <input class="form-check-input" type="checkbox" value="tomatoes" id="tomatoes" >
                         </div>
-                        
                         <div class="col-2">
-
-                        <label class="form-check-label" for="tomatoes">Tomatoes</label>
+                          <label class="form-check-label" for="tomatoes">Tomatoes</label>
                         </div>
-
                     </div>
 
 
 
+                    <!-- Jalapenos -->
 
-                      <div class="form-check form-check-reverse">
-                        <div class="col-10">
-                        <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos">
-                        </div>
-                        
-                        <div class="col-2">
 
-                        <label class="form-check-label" for="jalapenos">Jalapenos</label>
-                        </div>
 
+                  <div class="form-check form-check-reverse">
+                    <div class="col-8">
+                      <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos" >
                     </div>
+                    <div class="col-5">
+                      <label class="form-check-label" for="jalapenos">Jalapenos</label>
+                    </div>
+                  </div>
+
+
 
 
 
@@ -426,19 +464,69 @@
 
                 </fieldset>
 
+</div>
+
 </div>    
+
+<!-- cheese & sauce selection !-->
+   <div class="form-check form-check-reverse">
+     <div class="col-5">
+        <input class="form-check-input" type="checkbox" value="doublecheese" id="doublecheese" >
+      </div>
+     <div class="col-5">
+       <label class="form-check-label" for="doublecheese">Double Cheese</label>
+      </div>
+    </div>
+
+
+     <div class="form-check form-check-reverse">
+     <div class="col-5">
+        <input class="form-check-input" type="checkbox" value="doublesauce" id="doublesauce" >
+      </div>
+     <div class="col-5">
+       <label class="form-check-label" for="doublesauce">Double Sauce</label>
+      </div>
+    </div>
+
+
+
+
+
 </div>
 
 
-            <!-- form group vegetables toppings closing tag -->
-            </div>
+
+
+
+</div>
+
+
+           
+
+
            </fieldset>
         </div>
 
     </div>    
 
-    <p>ADD HERE LAST  ITEMS</p>
-        </div>   
+
+     <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 pt-4">
+
+                <button type="submit">Submit</button>
+            </div>
+
+        </div>
+
+    <div class="container pt-3" style="border-bottom: 1px solid black";>
+      <p>Thank you for using our online ordering form, for quick and easy orders, delivered free, fast and hot to your door. If you need to talk to us directly,call Pizza Byte at (302) 555-7599.</p>
+
+
+    </div>   
+
+    </form>
+
 
      
 
@@ -460,15 +548,15 @@
 <!-- Clossing bigger div right side -->
 </div>
 
-   <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6">
+  
 
-                <button>Submit</button>
-            </div>
 
-        </div>
 
+        <!-- Footer -->
+    
+<footer class="text-center">
+  <p>Pizza Byte  ⬤ 123 Market Street ⬤ Milltown, DE, 19900 ⬤ (302) 555-7599 </p>
+</footer>
 
 
 </div>
