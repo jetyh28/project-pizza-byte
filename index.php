@@ -99,7 +99,7 @@
         <label for="phone" class="custInfoLabel">Phone *</label>
         </div>
 
-        <div class="col-sm-6 pt-2">
+        <div class="col-sm-7 pt-2">
         <input type="tel" required name="phoneNumber" id="phone" class="form-control" /><br>
         </div>
     </div>
@@ -110,8 +110,8 @@
         <div class="col-sm-4">
         <label for="time" class="custInfoLabel">Delivery time <br> (leave blank for<br> immediate delivery)</label>
         </div>
-        <div class="col-sm-7">
-        <input type="time"  name="deliveryTime" id="time" /><br>
+        <div class="col-sm-4">
+        <input type="time"  name="deliveryTime" id="time" class="form-control" /><br>
         </div>
 
 
@@ -149,34 +149,47 @@
           <!-- Pizza 10" container -->
             <div class="col-2 text-center" >
 
+
+            <!--  container for red circle and check radio -->
+             <div class="container column-flex align-items-center">
+
         <!-- Pizza size selection -->
-              <div class="pizza1" style="background-color: red;">
-                <p style="padding-left: 5px;">10</p>
+              <div class="pizza1 mt-2" style="background-color: red;">
+                <p  style="padding-left: 5px; color: white;">10</p>
               </div>
 
               <!-- Radio button pizza 10 -->
 
-            <div class="container ms-4 mt-3">
-              <input class="form-check-input" type="radio" name="pizzaSize" id="pizza10">
+            <div class="container ms-4 mt-2">
+              <input class="form-check-input" type="radio" required name="pizzaSize" id="pizza10" value='10"'>
             </div>
 
+            </div>
             </div>
 
             <!-- Pizza 12" container -->
 
+
+
             <div class="col-2 text-center" >
+
+
+              <!--  container for red circle and check radio -->
+             <div class="container column-flex align-items-center">
                   <!-- Red pizza circle -->
               <div class="pizza2" style="background-color: red;">
+                <p class="mt-2" style="padding-left: 5px; color: white;">12</p>
               </div>
 
 
                <!-- Radio button pizza 12" -->
 
               <div class="container ms-4 mt-1">
-                <input class="form-check-input" type="radio" name="pizzaSize" id="pizza12">
+                <input class="form-check-input" type="radio" required name="pizzaSize" id="pizza12" value='12"'>
               </div>
 
 
+            </div>
             </div>
 
 
@@ -185,19 +198,25 @@
 
             <div class="col-2 text-center" >
 
+               <!--  container for red circle and check radio -->
+             <div class="container column-flex align-items-center">
+
               <!-- Red pizza circle -->
               <div class="pizza3" style="background-color: red;">
+                <p class="mt-2" style="padding-left: 5px; color: white;">14</p>
+
               </div>
 
               <!-- Radio button pizza 14" -->
 
               <div class="container ms-4">
-                <input class="form-check-input" type="radio" name="pizzaSize" id="pizza14">
+                <input class="form-check-input" type="radio" required name="pizzaSize" id="pizza14" value='14"'>
               </div>
 
 
 
 
+            </div>
             </div>
             
 
@@ -227,9 +246,9 @@
 
       <div class="col-sm-7">
         <select class="form-select" aria-label="crust selection" name="crust">
-            <option selected >Thick</option>
-            <option value="1">Thin</option>
-            <option value="2">Hand-tossed</option>
+            <option selected value="Thick">Thick</option>
+            <option value="Thin">Thin</option>
+            <option value="Hand-Tossed">Hand-tossed</option>
         </select>
 
 
@@ -250,7 +269,7 @@
 
         <div class="col-sm-7">
             <select class="form-select" aria-label="quantity selection" name="quantity">
-            <option selected>1</option>
+            <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -290,13 +309,13 @@
     <div class="row ms-3">
 
     <!-- Meat toppings -->
-        <div class="col-6 mt-3">
-            <fieldset style = "border: 1px solid black; border-top: none;" class="ps-2 pb-1">
+        <div class="col-5 pt-2">
+            <fieldset style = "border: 1px solid #b7aeae; border-top: none;" class="ps-2 pb-1">
             <legend class="legend-text ps-2">Meat Toppings</legend>
             
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                          <input class="form-check-input" name="toppings" type="checkbox" value="pepperoni" id="pepperoni"  >
+                          <input class="form-check-input" name="toppings[]" type="checkbox" value="pepperoni" id="pepperoni"  >
                         </div>
                         <div class="col-2">
                           <label class="form-check-label" for="pepperoni">Pepperoni</label>
@@ -305,7 +324,7 @@
 
                     <div class="form-check form-check-reverse">
                         <div class="col-8">
-                        <input class="form-check-input" name="toppings"  type="checkbox" value="ham" id="ham">
+                        <input class="form-check-input" name="toppings[]"  type="checkbox" value="ham" id="ham">
                         </div>
                         
                         <div class="col-2">
@@ -320,7 +339,7 @@
                     <div class="form-check form-check-reverse">
                       <div class="col-8">
 
-                      <input class="form-check-input" name="toppings" type="checkbox" value="pork" id="pork">
+                      <input class="form-check-input" name="toppings[]" type="checkbox" value="pork" id="pork">
                       </div>
 
                       <div class="col-2">
@@ -336,7 +355,7 @@
                       <div class="col-8">
 
 
-                      <input class="form-check-input" name="toppings" type="checkbox" value="sausage" id="sausage">
+                      <input class="form-check-input" name="toppings[]" type="checkbox" value="sausage" id="sausage">
                       </div>
 
                       <div class="col-2">
@@ -353,7 +372,7 @@
                       <div class="col-8">
 
 
-                      <input class="form-check-input" name="toppings" type="checkbox" value="chicken" id="chicken">
+                      <input class="form-check-input" name="toppings[]" type="checkbox" value="chicken" id="chicken">
 
                       </div>
 
@@ -380,18 +399,18 @@
 
 
         <!-- Vegetables toppings -->
-        <div class="col-6">
-          <fieldset style = "border: 1px solid black;  border-top: none;" class="ps-2 pb-1">
-            <legend class="legend-text ps-2 mt-3">Vegetable Toppings</legend>
+        <div class="col-5 pt-2 ">
+          <fieldset style = "border: 1px solid #b7aeae;  border-top: none;" class="ps-2 pb-1">
+            <legend class="legend-text ps-2">Vegetable Toppings</legend>
 
                     <!-- Mushrooms -->
 
 
                     <div class="form-check form-check-reverse">
-                      <div class="col-8">
-                        <input class="form-check-input" name="toppings" type="checkbox" value="mushrooms" id="mushrooms" >
+                      <div class="col-6">
+                        <input class="form-check-input" name="toppings[]" type="checkbox" value="mushrooms" id="mushrooms" >
                       </div>
-                        <div class="col-5">
+                        <div class="col-6">
                           <label class="form-check-label" for="mushrooms">Mushrooms</label>
                         </div>
                     </div>
@@ -399,10 +418,10 @@
 
                     <!-- Green Peppers -->
                     <div class="form-check form-check-reverse">
-                        <div class="col-8">
-                          <input class="form-check-input" name="toppings" type="checkbox" value="greenpeppers" id="gp" >
+                        <div class="col-6">
+                          <input class="form-check-input" name="toppings[]" type="checkbox" value="greenpeppers" id="gp" >
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                           <label class="form-check-label" for="gp">Green Peppers</label>
                         </div>
                     </div>
@@ -411,10 +430,10 @@
 
 
                     <div class="form-check form-check-reverse">
-                        <div class="col-8">
-                          <input class="form-check-input" name="toppings"  type="checkbox" value="onions" id="onions" >
+                        <div class="col-6">
+                          <input class="form-check-input" name="toppings[]"  type="checkbox" value="onions" id="onions" >
                         </div>
-                        <div class="col-3">
+                        <div class="col-6">
                           <label class="form-check-label" for="onions">Onions</label>
                         </div>
                     </div>
@@ -425,10 +444,10 @@
                     <!-- Tomatoes -->
 
                     <div class="form-check form-check-reverse">
-                        <div class="col-8">
-                          <input class="form-check-input" name="toppings" type="checkbox" value="tomatoes" id="tomatoes" >
+                        <div class="col-6">
+                          <input class="form-check-input" name="toppings[]" type="checkbox" value="tomatoes" id="tomatoes" >
                         </div>
-                        <div class="col-2">
+                        <div class="col-6">
                           <label class="form-check-label" for="tomatoes">Tomatoes</label>
                         </div>
                     </div>
@@ -440,11 +459,11 @@
 
 
                   <div class="form-check form-check-reverse">
-                    <div class="col-8">
+                    <div class="col-6">
                       <input class="form-check-input" type="checkbox" value="jalapenos" id="jalapenos" >
                     </div>
-                    <div class="col-5">
-                      <label class="form-check-label" name="toppings" for="jalapenos">Jalapenos</label>
+                    <div class="col-6">
+                      <label class="form-check-label" name="toppings[]" for="jalapenos">Jalapenos</label>
                     </div>
                   </div>
 
@@ -471,7 +490,7 @@
 <!-- cheese & sauce selection !-->
    <div class="form-check form-check-reverse">
      <div class="col-5">
-        <input class="form-check-input" type="checkbox" value="doublecheese" id="doublecheese" >
+        <input class="form-check-input" type="checkbox" value="doublecheese" id="doublecheese" name="extras[]" >
       </div>
      <div class="col-5">
        <label class="form-check-label" for="doublecheese">Double Cheese</label>
@@ -481,7 +500,7 @@
 
      <div class="form-check form-check-reverse">
      <div class="col-5">
-        <input class="form-check-input" type="checkbox" value="doublesauce" id="doublesauce" >
+        <input class="form-check-input" type="checkbox" value="doublesauce" id="doublesauce"name="extras[]">
       </div>
      <div class="col-5">
        <label class="form-check-label" for="doublesauce">Double Sauce</label>

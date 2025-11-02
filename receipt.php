@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <body>
-  <H1>PHP Form Validation </H1>
+  <H1 style="color:red;">Pizza Byte Receipt </H1>
 
 
 <?php
@@ -14,6 +14,9 @@
 	$deliveryTime = "";
 	$pizzaSize = "";
 	$crust = "";
+	$specialInstructions = "";
+	$toppings = "";
+	$extras = "";
     $display_form = false;
     $errors = false;
 
@@ -41,6 +44,30 @@
 
 		$lastName = trim(htmlspecialchars($_POST["lastName"]));
 	}
+
+	// Grabbing pizza size from html doc
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  	$pizzaSize  = $_POST["pizzaSize"];
+	$quantity  = $_POST["quantity"];
+	$deliveryTime  = $_POST["deliveryTime"];
+	$crust  = $_POST["crust"];
+	$toppings  = $_POST['toppings'];
+	$specialInstructions  = $_POST["specialInstructions"];
+	$extras  = $_POST['extras'];
+
+
+	
+	
+}
+
+
+
+
+
+
+
+
 		
 	if(!empty($error_message)) {
 		$display_form = true;
@@ -71,8 +98,53 @@
 <?php
     } else{
 		// Process Form Data
-		echo("<H2>Hi $firstName $lastName!!</H2>");
-    }
+		echo("<p>Hi $firstName $lastName,</p>");
+		echo("<p>Pizza Size: $pizzaSize Quantity: $quantity  </p>");
+		echo("<p>Special Instructions: $specialInstructions</p>");
+		echo("<p>Crust: $crust</p>");
+		echo("<p>Toppings:</p>" );
+		
+		if(!empty($toppings)) {
+			echo "<p>";
+			foreach($toppings as $topping) {
+				echo "<li>" . htmlspecialchars($topping) . "</li>";
+			}
+
+			echo"</p>";
+
+
+		} else {
+			echo "<p>No toppings selected. </p>";
+}
+
+		echo("<p>Extras:</p>" );
+
+		if(!empty($extras)) {
+			echo "<p>";
+			foreach($extras as $extra) {
+				echo "<li>" . htmlspecialchars($extra) . "</li>";
+			}
+
+			echo"</p>";
+
+
+		} else {
+			echo "<p>No extras selected. </p>";
+}
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+    
 ?>        
   </body>
 </html>
