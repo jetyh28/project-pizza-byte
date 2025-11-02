@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
  <body>
-  <H1 style="color:red;">Pizza Byte Receipt </H1>
+
+<head>
+   
+    <title> Pizza Byte</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Bootstrap CDN-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <title>Bootstrap Starter</title>
+</head>
+
 
 
 <?php
@@ -21,7 +34,7 @@
     $errors = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	// Check all of the form data.....
+	// Check all of the form data for required fields.....
 		
 	if (empty($_POST["firstName"])) {
 		$error_message = $error_message . "Error... Missing First Name!!<br>";
@@ -38,35 +51,38 @@
 		$error_message = $error_message . "Error... Missing Last Name!!<br>";
 		$errors = true;
 	} else {
-		// trim() is used to strip extra spaces from the user input.
-		// htmlspecialchars() is used to remove malicious input.
-  	      // You must always do this to prevent security problems!!!
+	
 
 		$lastName = trim(htmlspecialchars($_POST["lastName"]));
 	}
 
-	// Grabbing pizza size from html doc
+
+
+
+	if (empty($_POST["pizzaSize"])) {
+		$error_message = $error_message . "Error: Missing Pizza Size!<br>";
+		$errors = true;
+	} else {
+	
+
+		$pizzaSize= $_POST["pizzaSize"];
+	}
+
+
+
+
+	// Grabbing pizza info from not required fields 
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  	$pizzaSize  = $_POST["pizzaSize"];
 	$quantity  = $_POST["quantity"];
 	$deliveryTime  = $_POST["deliveryTime"];
 	$crust  = $_POST["crust"];
 	$toppings  = $_POST['toppings'];
 	$specialInstructions  = $_POST["specialInstructions"];
 	$extras  = $_POST['extras'];
-
-
 	
 	
 }
-
-
-
-
-
-
-
 
 		
 	if(!empty($error_message)) {
@@ -98,51 +114,50 @@
 <?php
     } else{
 		// Process Form Data
-		echo("<p>Hi $firstName $lastName,</p>");
-		echo("<p>Pizza Size: $pizzaSize Quantity: $quantity  </p>");
-		echo("<p>Special Instructions: $specialInstructions</p>");
-		echo("<p>Crust: $crust</p>");
-		echo("<p>Toppings:</p>" );
+		
+		echo'<div class="d-flex justify-content-center">';
+
+		echo'<div class="text-center">';
+		echo '<fieldset style=" border: 1px solid black;">';
+		echo'<legend>Order Receipt</legend>';
+		echo("<p>Hi $firstName. This is your order summary:</p>");
+		echo("<p><b>Pizza Size:</b> $pizzaSize Quantity: $quantity  </p>");
+		echo("<p><b>Special Instructions:</b> $specialInstructions</p>");
+		echo("<p><b>Crust:</b> $crust</p>");
+		echo("<p><b>Toppings:</b></p>" );
 		
 		if(!empty($toppings)) {
 			echo "<p>";
-			foreach($toppings as $topping) {
-				echo "<li>" . htmlspecialchars($topping) . "</li>";
+			
+				echo htmlspecialchars(implode("," ,$toppings));
 			}
-
-			echo"</p>";
-
-
-		} else {
+			
+			else {
 			echo "<p>No toppings selected. </p>";
 }
 
-		echo("<p>Extras:</p>" );
+		echo("<p><b>Extras:</b></p>" );
 
 		if(!empty($extras)) {
 			echo "<p>";
-			foreach($extras as $extra) {
-				echo "<li>" . htmlspecialchars($extra) . "</li>";
+
+			echo htmlspecialchars(implode("," ,$extras));
 			}
-
-			echo"</p>";
-
-
-		} else {
+		
+		else {
 			echo "<p>No extras selected. </p>";
 }
+	}
 
-
-
-
-
+	if(empty($specialInstructions)) {
+		echo "<p> No Special Instructions. </p>";
 
 	}
 
 
-
-
-
+echo '</fieldset>';
+echo '</div>';
+echo '</div>';
 
     
 ?>        
